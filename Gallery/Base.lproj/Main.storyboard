@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JrO-tL-Hc2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--List-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Gallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eVU-hG-biL"/>
+                        <viewControllerLayoutGuide type="bottom" id="FgS-6n-KOt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxi-5o-27e">
+                                <rect key="frame" x="0.0" y="113" width="320" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBa-aW-wXE">
+                                <rect key="frame" x="136" y="307" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zxc-sC-U96" kind="show" identifier="GoToGallery" id="dNt-fz-UfR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="List" id="uJ5-w4-GBw"/>
+                    <connections>
+                        <outlet property="picker" destination="Hxi-5o-27e" id="EM0-I6-33z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3343.125" y="338.02816901408448"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="TBT-gB-Wdz">
+            <objects>
+                <viewController id="zxc-sC-U96" customClass="GalleryViewController" customModule="Gallery" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHx-Hb-bXB"/>
+                        <viewControllerLayoutGuide type="bottom" id="jlf-S3-6km"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrA-CJ-EzR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="fanbingbing" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-ny-XwY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weP-z0-K9V">
+                                <rect key="frame" x="34" y="72" width="34" height="30"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8xR-T8-mLM" kind="unwind" unwindAction="close:" id="O2Y-IQ-bdN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fCL-tU-Pqe">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="Z1B-JF-5CS">
+                            <connections>
+                                <action selector="shareTapped:" destination="zxc-sC-U96" id="ZsW-Nz-AK9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beautyImage" destination="xUB-ny-XwY" id="uzv-We-zaG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgJ-f2-udH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8xR-T8-mLM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4177.5" y="338.02816901408448"/>
+        </scene>
+        <!--China-->
+        <scene sceneID="5eG-tg-eTn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8sQ-ya-QSX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="China" image="great_wall" badgeValue="6" id="5bj-ue-Eab"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SjM-Yz-wp3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="sIQ-Yz-TcJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87f-Pu-ZD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098.125" y="392.95774647887322"/>
+        </scene>
+        <!--Japan-->
+        <scene sceneID="d6I-YW-QWt">
+            <objects>
+                <viewController id="nlX-fu-2Vv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HPI-JS-8Nq"/>
+                        <viewControllerLayoutGuide type="bottom" id="okF-WQ-TMl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ge-2l-aBC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="japanese" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-2L-Bdx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Japan" image="geisha" id="b6g-sQ-IVx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4t-mD-l8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2244.375" y="1227.4647887323943"/>
+        </scene>
+        <!--Koera-->
+        <scene sceneID="fTz-Gs-PkO">
+            <objects>
+                <viewController id="byb-58-DIg" customClass="KoeraViewController" customModule="Gallery" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iRg-QN-sFk"/>
+                        <viewControllerLayoutGuide type="bottom" id="mb3-G7-qbt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2eK-R2-mKn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-8k-4hM">
+                                <rect key="frame" x="35" y="455" width="50" height="50"/>
+                                <state key="normal" backgroundImage="facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookTapped:" destination="byb-58-DIg" eventType="touchUpInside" id="nCc-h5-ZjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7O-QG-XkH">
+                                <rect key="frame" x="135" y="455" width="50" height="50"/>
+                                <state key="normal" backgroundImage="twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterTapped:" destination="byb-58-DIg" eventType="touchUpInside" id="3gg-VH-AE0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjv-f0-wug">
+                                <rect key="frame" x="235" y="455" width="50" height="50"/>
+                                <state key="normal" backgroundImage="weibo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="weiboTapped:" destination="byb-58-DIg" eventType="touchUpInside" id="CGM-oh-5Uq"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="korean" translatesAutoresizingMaskIntoConstraints="NO" id="xoV-7g-aab">
+                                <rect key="frame" x="35" y="20" width="250" height="415"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xoV-7g-aab" firstAttribute="centerX" secondItem="f7O-QG-XkH" secondAttribute="centerX" id="1z2-9e-gDj">
+                                <variation key="widthClass=compact" constant="-2"/>
+                            </constraint>
+                            <constraint firstItem="bdg-8k-4hM" firstAttribute="top" secondItem="xoV-7g-aab" secondAttribute="bottom" constant="20" id="FA7-Ys-3gQ"/>
+                            <constraint firstItem="xoV-7g-aab" firstAttribute="leading" secondItem="bdg-8k-4hM" secondAttribute="leading" id="LAd-1T-f73">
+                                <variation key="widthClass=compact" constant="-2"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="xoV-7g-aab" secondAttribute="trailing" constant="99" id="P6h-aD-eUc">
+                                <variation key="widthClass=compact" constant="59"/>
+                            </constraint>
+                            <constraint firstItem="jjv-f0-wug" firstAttribute="trailing" secondItem="xoV-7g-aab" secondAttribute="trailing" id="T9R-py-ndb">
+                                <variation key="widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="xoV-7g-aab" firstAttribute="top" secondItem="iRg-QN-sFk" secondAttribute="bottom" id="bbZ-wD-gyt"/>
+                            <constraint firstItem="bdg-8k-4hM" firstAttribute="bottom" secondItem="f7O-QG-XkH" secondAttribute="bottom" id="lc5-jW-hWa"/>
+                            <constraint firstItem="f7O-QG-XkH" firstAttribute="top" secondItem="bdg-8k-4hM" secondAttribute="top" id="qOy-Qn-lRy"/>
+                            <constraint firstItem="mb3-G7-qbt" firstAttribute="top" secondItem="bdg-8k-4hM" secondAttribute="bottom" constant="46" id="rJj-Li-ygQ"/>
+                            <constraint firstItem="f7O-QG-XkH" firstAttribute="top" secondItem="jjv-f0-wug" secondAttribute="top" id="t0i-tU-hcR"/>
+                            <constraint firstItem="xoV-7g-aab" firstAttribute="leading" secondItem="2eK-R2-mKn" secondAttribute="leadingMargin" constant="19" id="vyP-8t-ddK">
+                                <variation key="widthClass=compact" constant="59"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1z2-9e-gDj"/>
+                                <exclude reference="LAd-1T-f73"/>
+                                <exclude reference="P6h-aD-eUc"/>
+                                <exclude reference="bbZ-wD-gyt"/>
+                                <exclude reference="vyP-8t-ddK"/>
+                                <exclude reference="FA7-Ys-3gQ"/>
+                                <exclude reference="lc5-jW-hWa"/>
+                                <exclude reference="qOy-Qn-lRy"/>
+                                <exclude reference="t0i-tU-hcR"/>
+                                <exclude reference="T9R-py-ndb"/>
+                                <exclude reference="rJj-Li-ygQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="1z2-9e-gDj"/>
+                                <include reference="LAd-1T-f73"/>
+                                <include reference="P6h-aD-eUc"/>
+                                <include reference="bbZ-wD-gyt"/>
+                                <include reference="vyP-8t-ddK"/>
+                                <include reference="FA7-Ys-3gQ"/>
+                                <include reference="lc5-jW-hWa"/>
+                                <include reference="qOy-Qn-lRy"/>
+                                <include reference="t0i-tU-hcR"/>
+                                <include reference="T9R-py-ndb"/>
+                                <include reference="rJj-Li-ygQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Koera" image="torii" id="7YN-mC-rmx"/>
+                    <connections>
+                        <outlet property="beautyImage" destination="xoV-7g-aab" id="Ib9-ni-rIL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Q1-00-n5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289.375" y="2038.732394366197"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sg9-Sc-0DB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JrO-tL-Hc2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wa6-tb-IFs">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8sQ-ya-QSX" kind="relationship" relationship="viewControllers" id="lWj-mW-j8X"/>
+                        <segue destination="nlX-fu-2Vv" kind="relationship" relationship="viewControllers" id="h7J-CP-eNx"/>
+                        <segue destination="byb-58-DIg" kind="relationship" relationship="viewControllers" id="Kbq-GJ-gBv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbp-IL-W71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-789.375" y="1533.8028169014083"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook" width="50" height="50"/>
+        <image name="fanbingbing" width="320" height="568"/>
+        <image name="geisha" width="25" height="25"/>
+        <image name="great_wall" width="25" height="25"/>
+        <image name="japanese" width="320" height="568"/>
+        <image name="korean" width="320" height="568"/>
+        <image name="torii" width="25" height="25"/>
+        <image name="twitter" width="50" height="50"/>
+        <image name="weibo" width="50" height="50"/>
+    </resources>
+</document>
